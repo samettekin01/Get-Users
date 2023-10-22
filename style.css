@@ -29,6 +29,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background: radial-gradient(red, blue);
 }
 
 .header{
@@ -38,11 +39,12 @@ body{
     margin: 10px;
     width: calc(var(--wid) - 60%);
     min-width: var(--mwid);
-    background-color: white;
+    background-color: transparent;
     box-shadow: var(--boxShadow);
     border-radius: var(--borderRadius);
     padding: 10px;
     font-size: var(--fonts);
+    color: white;
 }
 
 .container{
@@ -51,7 +53,7 @@ body{
     height: 800px;
     width: calc(var(--wid) - 60%);
     min-width: var(--mwid);
-    background-color: white;
+    background-color: transparent;
     box-shadow: var(--boxShadow);
     margin: 10px;
     border-radius: var(--borderRadius);
@@ -64,17 +66,14 @@ body{
     display: none;
 }
 
-.cbs:checked ~ .d12{
-    height: 120px;
-    border-radius: 0 0 18px 18px;
-}
+
 .cbs:checked ~ .d11{
     border-radius: 18px 18px 0 0;
 }
 
 button{
     border: 0;
-    background-color: rgb(255, 187, 0);
+    background: linear-gradient(45deg, blue, red, orange);
     padding: 10px;
     border-radius: var(--borderRadius);
     box-shadow: var(--boxShadow);
@@ -85,7 +84,7 @@ button{
     margin: 5px;
 }
 button:hover{
-    background-color: rgb(204, 150, 0);
+    background: linear-gradient(45deg, orange, red, blue);
 }
 button:active{
     opacity: 80%;
@@ -98,6 +97,8 @@ input{
     padding: 8px;
     font-size: var(--fonts);
     border-radius: var(--borderRadius);
+    background-color: transparent;
+    color: white;
 }
 
 .d11{
@@ -136,6 +137,11 @@ input{
     animation-iteration-count: infinite;
 }
 
+.cbs:checked ~ .d12{
+    height: 120px;
+    border-radius: 0 0 18px 18px;
+}
+
 .d1{
     display: flex;
     flex-direction: column;
@@ -165,6 +171,7 @@ input{
 .d11s{
     margin-left: 5px;
     font-size: var(--fonts);
+    width: 50%;
 }
 
 .d11s2{
@@ -184,5 +191,11 @@ input{
 }
 
 .d12s{
+    color: transparent;
     margin: 5px 0px 5px 20px;
+    transition: color .3s;
+}
+
+.cbs:checked ~ .d12 .d12s{
+    color: white;
 }
